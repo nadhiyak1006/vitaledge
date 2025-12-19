@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Healthcare color palette - soft, trustworthy, medical */
+    --background: 200 30% 98%;
+    --foreground: 200 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 10%;
+
+    /* Primary: Medical Teal */
+    --primary: 180 65% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Blue */
+    --secondary: 200 40% 94%;
+    --secondary-foreground: 200 50% 20%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 200 15% 45%;
+
+    /* Accent: Light Teal */
+    --accent: 175 50% 90%;
+    --accent-foreground: 180 65% 30%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 180 65% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom Healthcare Colors */
+    --health-teal: 180 65% 40%;
+    --health-teal-light: 180 50% 95%;
+    --health-blue: 210 80% 55%;
+    --health-blue-light: 210 60% 95%;
+    --health-green: 145 65% 42%;
+    --health-green-light: 145 50% 92%;
+    --health-yellow: 45 95% 50%;
+    --health-yellow-light: 45 90% 92%;
+    --health-red: 0 72% 51%;
+    --health-red-light: 0 70% 95%;
+    --health-purple: 270 60% 55%;
+    --health-purple-light: 270 50% 95%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(180 65% 40%), hsl(210 80% 55%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(200 30% 98%));
+    --gradient-health: linear-gradient(135deg, hsl(145 65% 42%), hsl(180 65% 40%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(200 50% 10% / 0.05);
+    --shadow-md: 0 4px 16px hsl(200 50% 10% / 0.08);
+    --shadow-lg: 0 8px 32px hsl(200 50% 10% / 0.12);
+    --shadow-glow: 0 0 40px hsl(180 65% 40% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 30% 8%;
+    --foreground: 200 20% 95%;
+
+    --card: 200 25% 12%;
+    --card-foreground: 200 20% 95%;
+
+    --popover: 200 25% 12%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 180 65% 50%;
+    --primary-foreground: 200 30% 8%;
+
+    --secondary: 200 30% 18%;
+    --secondary-foreground: 200 20% 90%;
+
+    --muted: 200 25% 18%;
+    --muted-foreground: 200 15% 60%;
+
+    --accent: 180 40% 20%;
+    --accent-foreground: 180 50% 85%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 25% 20%;
+    --input: 200 25% 20%;
+    --ring: 180 65% 50%;
+
+    --health-teal: 180 65% 50%;
+    --health-teal-light: 180 40% 15%;
+    --health-blue: 210 80% 60%;
+    --health-blue-light: 210 50% 15%;
+    --health-green: 145 65% 50%;
+    --health-green-light: 145 40% 15%;
+    --health-yellow: 45 95% 55%;
+    --health-yellow-light: 45 60% 15%;
+    --health-red: 0 72% 55%;
+    --health-red-light: 0 50% 15%;
+  }
+
+  /* High Contrast Mode */
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 210 100% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 20%;
+    --border: 0 0% 0%;
+  }
+
+  /* Large Font Mode */
+  .large-fonts {
+    font-size: 120%;
+  }
+
+  .large-fonts h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .large-fonts h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .large-fonts h3 {
+    font-size: 1.75rem !important;
+  }
+
+  .large-fonts p, .large-fonts span, .large-fonts li {
+    font-size: 1.25rem !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-health-teal to-health-blue;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-health {
+    background: var(--gradient-health);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
